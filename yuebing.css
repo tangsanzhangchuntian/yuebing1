@@ -1,0 +1,97 @@
+/*初始化*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*居中背景设置*/
+body{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #edc89c;
+}
+/*设置相对路径*/
+.yuebing{
+    position: relative;
+    cursor: default;
+}
+/*设置字体*/
+h2 {
+    z-index: 9999;
+    font-size: 7em;
+    color:#cf5817;
+    text-shadow:  0 0 5px #ad4508;
+}
+/*绘画一个圆形*/
+.box {
+    /*居中*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -10;
+    width: 200px;
+    height: 200px;
+    background-color: #dc7e22;
+    border-radius: 50%;
+}
+/*里面的一个饼子*/
+.box::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    width: 90%;
+    height: 90%;
+    background-color: #cf6717;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #ad4500 , inset 0 0 5px #d78220;
+}
+/*饼子的第二层*/
+.box::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    width: 85%;
+    height: 85%;
+    background-color: #d78228;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #ad4588 ;
+}
+/*饼子的外边花纹*/
+.box span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%)  rotate(calc((30deg * var(--i)) + 45deg));
+    z-index: -10;
+    width: 90%;
+    height: 90%;
+}
+.box span::before{
+    content: "";
+    position: absolute;
+
+    width: 80px;
+    height: 80px;
+    background-color: #d78228;
+    border-radius: 50%;
+    box-shadow: inset 5px 5px 10px #cf6717;
+
+}
+.box span::after{
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: inset 5px 5px 20px #cf6717;
+    transform: scale(0.8);
+}
